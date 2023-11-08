@@ -1,0 +1,32 @@
+.header {
+  padding: 4rem;
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h1:nth-child(1) {
+    color: var(--background-color);
+  }
+
+  h1:nth-child(2) {
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: var(--white);
+    line-height: 2.5rem;
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+
+  button {
+    color: var(--white);
+    background-color: var(--background-color);
+    padding: 0.8rem 2.5rem;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    border-radius: 20px;
+  }
+}

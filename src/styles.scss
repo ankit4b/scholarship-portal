@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+:root {
+  --background-color: #191970;
+  --light-blue: #2473b3;
+  --white: #fff;
+  --black: #333;
+  --gray: #666;
+  --platinum_gray: #797979;
+}
+
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: Robotto, sans-serif;
+}

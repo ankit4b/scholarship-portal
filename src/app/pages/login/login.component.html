@@ -1,0 +1,51 @@
+<div class="loginContainer">
+  <div class="formContainer">
+    <img src="/assets/images/odisha-logo.png" />
+    <h4>State Scholarship Portal</h4>
+    <p>Goverment of Odisha</p>
+    <hr class="mb-5 w-75 m-auto" />
+    <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <!-- <mat-icon>person_outline</mat-icon> -->
+        <!-- <div class="form-controls">
+          <label>Unique Number / Aadhaar Number</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Unique Number / Aadhaar Number"
+          />
+        </div> -->
+        <div class="form-controls">
+          <label>Email</label>
+          <input
+            type="email"
+            class="form-control"
+            placeholder="Email id"
+            formControlName="email"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <!-- <mat-icon>person_outline</mat-icon> -->
+        <div class="form-controls">
+          <label>Password</label>
+          <input
+            type="password"
+            class="form-control"
+            formControlName="password"
+            placeholder="Password"
+          />
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success mt-4">Submit</button>
+    </form>
+    <div class="mt-3" style="text-align: left">
+      Use these detials for Login:
+      <ul style="list-style: none; margin: 0; padding: 0">
+        <li><span style="font-weight: bold">mail:</span> ankit4b@gmail.com</li>
+        <li><span style="font-weight: bold">password:</span> Pass@123</li>
+      </ul>
+    </div>
+  </div>
+</div>

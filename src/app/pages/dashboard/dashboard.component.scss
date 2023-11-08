@@ -1,0 +1,16 @@
+.dashboard_page {
+  display: flex;
+
+  .sidebar {
+    width: 20%;
+    padding: 1rem;
+    min-height: 100vh;
+    background-color: rgb(247, 247, 247);
+  }
+  .main {
+    width: 80%;
+    padding: 1rem;
+    min-height: 100vh;
+    background-color: rgb(247, 247, 247);
+  }
+}

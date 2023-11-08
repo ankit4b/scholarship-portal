@@ -1,0 +1,37 @@
+<div class="apply_scholarship_container">
+  <div class="heading">
+    <h3>Scholarship Application Form</h3>
+  </div>
+  <div class="forms-container">
+    <ul class="nav nav-tabs">
+      <li class="nav-item" (click)="selectTab('profile-information-from')">
+        <a
+          class="nav-link"
+          [class]="activeTab === 'profile-information-from' ? 'active' : ''"
+          aria-current="page"
+          routerLink="profile-information-from"
+          >Student Profile Information</a
+        >
+      </li>
+      <li class="nav-item" (click)="selectTab('academic-information-from')">
+        <a
+          class="nav-link"
+          [class]="activeTab === 'academic-information-from' ? 'active' : ''"
+          routerLink="academic-information-from"
+          >Academic Information</a
+        >
+      </li>
+      <li class="nav-item" (click)="selectTab('account-information-from')">
+        <a
+          class="nav-link"
+          [class]="activeTab === 'account-information-from' ? 'active' : ''"
+          routerLink="account-information-from"
+          >Account Information</a
+        >
+      </li>
+    </ul>
+  </div>
+  <div class="forms">
+    <router-outlet></router-outlet>
+  </div>
+</div>

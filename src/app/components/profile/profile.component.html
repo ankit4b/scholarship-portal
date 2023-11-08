@@ -1,0 +1,117 @@
+<div class="profile-container">
+  <div class="profile-details">
+    <h4>Profile Details</h4>
+
+    <div class="user-details">
+      <app-profile-card
+        [icon]="'school'"
+        [title]="'Name'"
+        [desc]="userDetails?.name"
+      ></app-profile-card>
+      <app-profile-card
+        [icon]="'person'"
+        [title]="'Father\'s Name'"
+        [desc]="userDetails?.fatherName"
+      ></app-profile-card>
+      <app-profile-card
+        [icon]="'polymer'"
+        [title]="'Gender'"
+        [desc]="userDetails?.gender"
+      ></app-profile-card>
+      <app-profile-card
+        [icon]="'date_range'"
+        [title]="'Date of Birth'"
+        [desc]="userDetails?.dob"
+      ></app-profile-card>
+      <app-profile-card
+        [icon]="'sim_card'"
+        [title]="'Aadhaar No.'"
+        [desc]="userDetails?.aadhaar"
+      ></app-profile-card>
+      <app-profile-card
+        [icon]="'ac_unit'"
+        [title]="'Category'"
+        [desc]="userDetails?.category"
+      ></app-profile-card>
+      <app-profile-card
+        [icon]="'smartphone'"
+        [title]="'Mobile Number'"
+        [desc]="userDetails?.mobileNo"
+      ></app-profile-card>
+      <app-profile-card
+        [icon]="'alternate_email'"
+        [title]="'e-Mail ID'"
+        [desc]="userDetails?.email"
+      ></app-profile-card>
+    </div>
+  </div>
+  <div class="scholarships">
+    <div class="card" style="background-color: #4a9ad8">
+      <div class="card-info">
+        <h6>Applied</h6>
+        <h2>{{ scholarshipsStatus.Total }}</h2>
+      </div>
+      <div class="card-icon">
+        <mat-icon class="icon">library_books</mat-icon>
+      </div>
+    </div>
+    <div class="card" style="background-color: #ffc107">
+      <div class="card-info">
+        <h6>Inprogress</h6>
+        <h2>{{ scholarshipsStatus.Inprogress }}</h2>
+      </div>
+      <div class="card-icon">
+        <mat-icon class="icon">swap_horiz</mat-icon>
+      </div>
+    </div>
+    <div class="card" style="background-color: #8bc34a">
+      <div class="card-info">
+        <h6>Disbursed</h6>
+        <h2>{{ scholarshipsStatus.Disbursed }}</h2>
+      </div>
+      <div class="card-icon">
+        <mat-icon class="icon">money</mat-icon>
+      </div>
+    </div>
+    <div class="card" style="background-color: #f44336">
+      <div class="card-info">
+        <h6>Reverted</h6>
+        <h2>{{ scholarshipsStatus.Reverted }}</h2>
+      </div>
+      <div class="card-icon">
+        <mat-icon class="icon">cancel_presentation</mat-icon>
+      </div>
+    </div>
+  </div>
+
+  <div class="status">
+    <h3>Current Application Status</h3>
+
+    <div class="status-cards">
+      <div
+        style="display: inline-block"
+        *ngFor="let scholarship of appliedScholarshipList"
+      >
+        <app-scholarship-status-card
+          [name]="scholarship.scheme_name"
+          [department]="scholarship.department_name"
+          [application_no]="scholarship.application_no"
+          [status]="scholarship.status"
+        ></app-scholarship-status-card>
+      </div>
+
+      <!-- <app-scholarship-status-card
+        [name]="'Post Matric Scholarship'"
+        [department]="'ST&SC and MBC Welfare Department'"
+        [application_no]="'STSC92308293015880'"
+        [status]="'Pending at Instritute'"
+      ></app-scholarship-status-card>
+      <app-scholarship-status-card
+        [name]="'Post Matric Scholarship'"
+        [department]="'ST&SC and MBC Welfare Department'"
+        [application_no]="'STSC92308293015880'"
+        [status]="'Pending at Instritute'"
+      ></app-scholarship-status-card> -->
+    </div>
+  </div>
+</div>

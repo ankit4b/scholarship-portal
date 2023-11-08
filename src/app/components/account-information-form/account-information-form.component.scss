@@ -1,0 +1,19 @@
+.accountFormContainer {
+  width: 90%;
+  margin: auto;
+  form {
+    .instructions {
+      color: red;
+      font-size: 0.8rem;
+      li {
+        line-height: 1.5rem;
+      }
+    }
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      justify-content: center;
+    }
+  }
+}

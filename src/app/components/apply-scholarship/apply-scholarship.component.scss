@@ -1,0 +1,27 @@
+.apply_scholarship_container {
+  padding: 1rem;
+  background-color: var(--white);
+
+  .heading {
+    h3 {
+      font-size: 1.2rem;
+      color: var(--light-blue);
+      font-weight: 600;
+    }
+  }
+
+  .forms-container {
+    margin-top: 2rem;
+
+    a {
+      color: var(--black);
+    }
+    .active {
+      color: var(--light-blue);
+    }
+  }
+
+  .forms {
+    margin-top: 2rem;
+  }
+}

@@ -1,0 +1,27 @@
+.section {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  width: 250px;
+
+  .icon {
+    color: var(--light-blue);
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      color: var(--platinum_gray);
+      font-size: 0.9rem;
+    }
+
+    .description {
+      color: var(--platinum_gray);
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  }
+}

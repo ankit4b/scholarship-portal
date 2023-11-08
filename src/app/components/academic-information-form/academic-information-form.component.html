@@ -1,0 +1,286 @@
+<div class="academicFormContainer">
+  <!-- {{ academicForm.value | json }} -->
+  <div>
+    <h5>Educational Qualification Details</h5>
+  </div>
+
+  <form [formGroup]="academicForm" (ngSubmit)="onSubmit()">
+    <table class="table" formArrayName="prevEducation">
+      <thead>
+        <tr>
+          <th scope="col mb-2">Course</th>
+          <th scope="col mb-2">Board</th>
+          <th scope="col mb-2">Passing Year</th>
+          <th scope="col mb-2">Roll No.</th>
+          <th scope="col mb-2">Total Mark/CGPA</th>
+          <th scope="col mb-2">Secured Marks/CGPA</th>
+          <th scope="col mb-2">( % )</th>
+          <th scope="col mb-2">Marksheet/Certificate</th>
+        </tr>
+      </thead>
+      <tbody
+        *ngFor="let prevEducation of prevEducation.controls; let i = index"
+      >
+        <tr [formGroupName]="i">
+          <td>
+            <select class="form-select" id="course" formControlName="course">
+              <option value="">course</option>
+              <option value="X">X</option>
+              <option value="XI">XI</option>
+              <option value="XII">XII</option>
+              <option value="BA">BA</option>
+              <option value="BSc">BSc</option>
+              <option value="MA">MA</option>
+              <option value="MSc">MSc</option>
+              <option value="BCom">BCom</option>
+              <option value="MCom">MCom</option>
+            </select>
+          </td>
+          <td>
+            <select class="form-select" id="board" formControlName="board">
+              <option value="">board</option>
+              <option value="BSE, Odisha">BSE, Odisha</option>
+              <option value="CHSE, Odisha">CHSE, Odisha</option>
+            </select>
+          </td>
+          <td>
+            <select
+              class="form-select"
+              formControlName="passingYear"
+              id="passingYear"
+            >
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+            </select>
+          </td>
+          <td>
+            <input type="text" formControlName="rollNo" class="form-control" />
+          </td>
+          <td>
+            <input
+              type="number"
+              formControlName="totalMark"
+              class="form-control"
+            />
+          </td>
+          <td>
+            <input
+              type="number"
+              formControlName="securedMark"
+              class="form-control"
+            />
+          </td>
+          <td>
+            <input
+              type="number"
+              formControlName="percentage"
+              class="form-control"
+            />
+          </td>
+          <td>
+            <input
+              type="file"
+              class="form-control"
+              id="marksheet"
+              formControlName="marksheet"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button
+      type="button"
+      (click)="addPrevEducation()"
+      class="btn btn-primary btn-sm mb-4"
+    >
+      Add Course
+    </button>
+
+    <h5>Institute / Course Information (Current Education Information)</h5>
+
+    <div formGroupName="currentEducation">
+      <div class="row">
+        <div class="col mb-2">
+          <label for="district" class="form-label">District:</label>
+          <input
+            type="text"
+            formControlName="district"
+            id="district"
+            class="form-control"
+          />
+        </div>
+        <div class="col mb-2">
+          <label for="block" class="form-label">Block:</label>
+          <input
+            type="text"
+            formControlName="block"
+            id="block"
+            class="form-control"
+          />
+        </div>
+        <div class="col mb-2">
+          <label for="institute" class="form-label">Institute:</label>
+          <input
+            type="text"
+            formControlName="institute"
+            id="institute"
+            class="form-control"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col mb-2">
+          <label for="CourseNature" class="form-label">Course Nature:</label>
+          <input
+            type="text"
+            formControlName="CourseNature"
+            id="CourseNature"
+            class="form-control"
+          />
+        </div>
+        <div class="col mb-2">
+          <label for="CourseName" class="form-label">Course Name:</label>
+          <input
+            type="text"
+            formControlName="CourseName"
+            id="CourseName"
+            class="form-control"
+          />
+        </div>
+        <div class="col mb-2">
+          <label for="BranchName" class="form-label">Branch Name:</label>
+          <input
+            type="text"
+            formControlName="BranchName"
+            id="BranchName"
+            class="form-control"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col mb-2">
+          <label for="CourseYear" class="form-label">Course Year:</label>
+          <input
+            type="number"
+            formControlName="CourseYear"
+            id="CourseYear"
+            class="form-control"
+          />
+        </div>
+        <div class="col mb-2">
+          <label for="RegistrationNo" class="form-label"
+            >Admission/Registration No. (Current Year):</label
+          >
+          <input
+            type="text"
+            formControlName="RegistrationNo"
+            id="RegistrationNo"
+            class="form-control"
+          />
+        </div>
+        <div class="col mb-2">
+          <label for="RegistrationDate" class="form-label"
+            >Admission/Readmission Date(Current Year):</label
+          >
+          <input
+            type="date"
+            formControlName="RegistrationDate"
+            id="RegistrationDate"
+            class="form-control"
+          />
+        </div>
+      </div>
+    </div>
+
+    <h5 class="mt-4 mb-4">Details of Last Passed exam</h5>
+    <div class="row" formGroupName="lastPassedExam">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col mb-2">Course</th>
+            <th scope="col mb-2">Passing Year</th>
+            <th scope="col mb-2">Roll No.</th>
+            <th scope="col mb-2">Total Mark/CGPA</th>
+            <th scope="col mb-2">Secured Marks/CGPA</th>
+            <th scope="col mb-2">( % )</th>
+            <th scope="col mb-2">Marksheet/Certificate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <select class="form-select" id="course" formControlName="course">
+                <option value="">course</option>
+                <option value="X">X</option>
+                <option value="XI">XI</option>
+                <option value="XII">XII</option>
+                <option value="BA">BA</option>
+                <option value="BSc">BSc</option>
+                <option value="MA">MA</option>
+                <option value="MSc">MSc</option>
+                <option value="BCom">BCom</option>
+                <option value="MCom">MCom</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="form-select"
+                formControlName="passingYear"
+                id="passingYear"
+              >
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+              </select>
+            </td>
+            <td>
+              <input
+                type="text"
+                formControlName="rollNo"
+                class="form-control"
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                formControlName="totalMark"
+                class="form-control"
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                formControlName="securedMark"
+                class="form-control"
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                formControlName="percentage"
+                class="form-control"
+              />
+            </td>
+            <td>
+              <input
+                type="file"
+                class="form-control"
+                id="marksheet"
+                formControlName="marksheet"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="buttons mt-5">
+      <button type="submit" class="btn btn-primary">BACK</button>
+      <button type="submit" class="btn btn-warning">SAVE AS DRAFT</button>
+      <button type="submit" class="btn btn-success">NEXT</button>
+    </div>
+  </form>
+</div>

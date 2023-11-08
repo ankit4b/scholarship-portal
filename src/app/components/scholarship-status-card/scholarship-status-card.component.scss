@@ -1,0 +1,53 @@
+.card {
+  width: 400px;
+  padding: 1rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  .card-info {
+    display: flex;
+    flex-direction: column;
+    // gap: 0.5rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px dashed var(--platinum_gray);
+
+    h3 {
+      font-size: 1.3rem;
+      color: var(--light-blue);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    p {
+      font-size: 1rem;
+      color: var(--platinum_gray);
+      margin: 0;
+    }
+  }
+
+  .card-desc {
+    display: flex;
+    flex-direction: column;
+    // gap: 0.5rem;
+    color: var(--black);
+    margin-bottom: 1rem;
+
+    .application_no,
+    .status {
+      margin: 0;
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .card-action {
+    button {
+      color: var(--white);
+      padding: 0.3rem 0.8rem;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      margin-right: 1rem;
+      font-size: 0.8rem;
+    }
+  }
+}

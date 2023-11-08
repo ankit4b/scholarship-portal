@@ -1,0 +1,43 @@
+.header {
+  min-height: 80vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
+    url(../../../assets/images/pexels-rdne-stock-project-7713149.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      color: var(--white);
+      font-size: 1.5rem;
+      font-family: fantasy;
+      letter-spacing: 2px;
+    }
+
+    .menus {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+
+      a {
+        color: var(--white);
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+      }
+
+      button {
+        color: var(--white);
+        background-color: var(--background-color);
+        padding: 0.5rem 2rem;
+        letter-spacing: 1px;
+        font-size: 1rem;
+        border-radius: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.scholarship_list_container {
+  padding: 1rem;
+  background-color: var(--white);
+
+  .heading {
+    h2 {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+
+  .btn {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+  }
+}

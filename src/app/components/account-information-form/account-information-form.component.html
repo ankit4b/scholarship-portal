@@ -1,0 +1,146 @@
+<div class="accountFormContainer">
+  <!-- {{ bankForm.value | json }} -->
+  <div>
+    <h5>Bank Information</h5>
+  </div>
+
+  <form [formGroup]="bankForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col mb-4">
+        <input
+          type="text"
+          formControlName="ifsc"
+          class="form-control"
+          id="ifsc"
+          placeholder="IFSC Code"
+        />
+      </div>
+      <div class="col mb-4">
+        <!-- <label for="bankName" class="form-label">Bank Name:</label> -->
+        <input
+          type="text"
+          formControlName="bankName"
+          class="form-control"
+          id="bankName"
+          placeholder="Bank Name"
+        />
+      </div>
+      <div class="col mb-4">
+        <!-- <label for="branchName" class="form-label">Branch Name:</label> -->
+        <input
+          type="text"
+          formControlName="branchName"
+          class="form-control"
+          id="branchName"
+          placeholder="Branch Name"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col mb-4">
+        <input
+          type="text"
+          formControlName="accountHolderName"
+          class="form-control"
+          id="accountHolderName"
+          placeholder="Account Holder Name"
+        />
+      </div>
+      <div class="col mb-4">
+        <!-- <label for="bankName" class="form-label">Bank Name:</label> -->
+        <input
+          type="number"
+          formControlName="accountNumber"
+          class="form-control"
+          id="accountNumber"
+          placeholder="Account Number"
+        />
+      </div>
+      <div class="col mb-4">
+        <!-- <label for="branchName" class="form-label">Branch Name:</label> -->
+        <input
+          type="number"
+          formControlName="reAccountNumber"
+          class="form-control"
+          id="reAccountNumber"
+          placeholder="Re-type Account Number"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col mb-4">
+        <label for="gender" class="form-label"
+          >Whether Account number tagged/seeded with the Aadhaar number?:</label
+        >
+        <br />
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            formControlName="accountLinkedAadhaar"
+            name="accountLinkedAadhaar"
+            id="yes"
+            value="Yes"
+          />
+          <label class="form-check-label" for="yes">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            formControlName="accountLinkedAadhaar"
+            type="radio"
+            name="accountLinkedAadhaar"
+            id="no"
+            value="No"
+          />
+          <label class="form-check-label" for="no">No</label>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <label for="gender" class="form-label"
+          >Upload front page of passbook where the Account number and IFSC code
+          given above is clearly visible
+        </label>
+        <br />
+        <input
+          type="file"
+          formControlName="passbookImg"
+          class="form-control"
+          id="exampleFormControlFile1"
+        />
+
+        <span style="color: red; display: inline-block; margin-top: 0.5rem"
+          >Note: Upload .pdf file upto 1MB file size.</span
+        >
+      </div>
+      <div class="col mb-4"></div>
+    </div>
+
+    <div class="instructions">
+      <ul>
+        <li>
+          Kindly provide correct and active bank account number and IFSC code.
+          Be very careful while furnishing bank-account information as for any
+          wrong entry, Government will not be responsible for mis-credit of
+          Scholarship amount. Applicant will be held responsible in case of
+          diversion of public money on this ground.
+        </li>
+        <li>
+          Please note that your Aadhaar Number will be used for crediting
+          scholarship amount in the bank account linked/ seeded to your Aadhaar
+          number in fast-track mode. To link/ seed your bank account with your
+          Aadhaar, please visit you bank branch and submit a 'bank consent form
+          for receiving DBT'.
+        </li>
+        <li>
+          Please go through the Bank-account related Advisory available in home
+          page of OSSP before entering the account details.
+        </li>
+      </ul>
+    </div>
+    <div class="buttons mt-5">
+      <button type="submit" class="btn btn-primary">BACK</button>
+      <button type="submit" class="btn btn-success">SUBMIT</button>
+    </div>
+  </form>
+</div>
